@@ -48,9 +48,9 @@ module.exports = function (db) {
           },
           function () {
             if (result.length > 0) {
-              callBack(result, false, "Found result");
+              callBack(result, false, "Question found");
             } else {
-              callBack(null, true, "No result found");
+              callBack(null, true, "No Question found");
             }
           }
         );
@@ -65,9 +65,9 @@ module.exports = function (db) {
             callBack(null, true, "error occured");
           } else {
             if (doc) {
-              callBack(doc, false, "data founded");
+              callBack(doc, false, "Question found");
             } else {
-              callBack(null, true, "data not found");
+              callBack(null, true, "Question not found");
             }
           }
         });
@@ -81,9 +81,9 @@ module.exports = function (db) {
           if (err) {
             callBack(null, true, "error occured");
           } else if (doc.deletedCount === 1) {
-            callBack(doc, false, "data deleted");
+            callBack(doc, false, "Question Deleted successfully");
           } else {
-            callBack(null, true, "data not deleted");
+            callBack(null, true, "Error deleting question");
           }
         });
       } catch (e) {

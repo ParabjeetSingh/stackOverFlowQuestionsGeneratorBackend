@@ -36,7 +36,7 @@ module.exports = {
 
         } else {
           if (req.body.hasOwnProperty("question") == false) {
-            res.json({ status: false, message: "question parameter missing" });
+            res.json({ status: false, message: "Question parameter missing" });
           }
         }
       } catch (er) {
